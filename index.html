@@ -3,40 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Parrots at Risk</title>
-    <meta name="description" content="An interactive atlas of extinction risk among the world's parrots, by biogeographic realm.">
+    <meta name="description" content="Local preview of CARE PARROTS Data Visualization 04 inside a copy of the site's card styles.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+    <!--
+      LOCAL PREVIEW ONLY. The inline <style> below copies the CARE PARROTS site's
+      global reset and visualization-card rules, so the component can be tested
+      under the same conditions. Do not copy this <style> block into the site;
+      the site's style.css already provides it.
+    -->
+    <style>
+        :root { --forest: #244B38; --deep-green: #17382B; --light-sage: #E8EEE3; --cream: #F7F5ED; --text: #29372E; --muted: #68766B; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+        p { color: var(--muted); }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 60px 0; }
+        .visualization-container { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 25px rgba(30, 50, 35, 0.07); }
+        .visualization-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; }
+        .visualization-label { font-size: 0.7rem; letter-spacing: 1.5px; color: var(--forest); font-weight: bold; }
+        .visualization-header h3 { color: var(--deep-green); margin-top: 7px; font-size: 1.5rem; line-height: 1.2; }
+        .coming-soon { background: var(--light-sage); color: var(--forest); padding: 7px 13px; border-radius: 30px; font-size: 0.7rem; font-weight: bold; letter-spacing: 1px; }
+        .visualization-placeholder { min-height: 390px; background: #F7F8F4; border: 2px dashed #BCCAB8; border-radius: 7px; display: flex; justify-content: center; align-items: center; text-align: center; padding: 30px; }
+        @media (max-width: 768px) { .visualization-container { padding: 18px; } }
+    </style>
 
-    <link rel="stylesheet" href="visualizations/visualization2.css">
-
-    <!-- D3.js library for interactive visualizations -->
+    <!-- ===== Needed on the real site (d3 is already loaded there) ===== -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-
-    <!-- Visualization 2: choropleth (Tigran Zhamakochyan) -->
-    <script src="visualizations/visualization2.js" defer></script>
+    <link rel="stylesheet" href="visualizations/visualization4.css">
+    <script src="visualizations/visualization4.js" defer></script>
 </head>
-
 <body>
+    <div class="container">
 
-    <div class="page">
+        <!-- ===== Visualization 4: this block replaces the placeholder card on the site ===== -->
+        <div class="visualization-container">
+            <div class="visualization-header">
+                <div>
+                    <span class="visualization-label">DATA VISUALIZATION 04</span>
+                    <h3>Where Are Parrots Most at Risk?</h3>
+                </div>
+                <span class="coming-soon">CHOROPLETH MAP</span>
+            </div>
 
-        <header class="masthead">
-            <p class="eyebrow">Biodiversity &middot; IUCN Red List &middot; Interactive atlas</p>
-            <h1>Parrots at Risk: <em>A Global Conservation Atlas</em></h1>
-            <p class="dek">
-                Parrots are among the most threatened bird groups on Earth. This atlas maps every
-                parrot species to its biogeographic realm, so you can see where extinction risk
-                is concentrated and which traits go with it.
-            </p>
-        </header>
-
-        <main id="visualization-2" aria-live="polite"></main>
+            <div id="parrot-conservation-viz" class="visualization-placeholder" data-path="data/"></div>
+        </div>
 
     </div>
-
 </body>
 </html>
