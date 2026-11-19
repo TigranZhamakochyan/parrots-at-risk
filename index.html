@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Parrots at Risk</title>
+    <meta name="description" content="An interactive atlas of extinction risk among the world's parrots, by biogeographic realm.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="visualizations/visualization2.css">
+
+    <!-- D3.js library for interactive visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Visualization 2: choropleth (Tigran Zhamakochyan) -->
+    <script src="visualizations/visualization2.js" defer></script>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <header class="masthead">
+            <p class="eyebrow">Biodiversity &middot; IUCN Red List &middot; Interactive atlas</p>
+            <h1>Parrots at Risk: <em>A Global Conservation Atlas</em></h1>
+            <p class="dek">
+                Parrots are among the most threatened bird groups on Earth. This atlas maps every
+                parrot species to its biogeographic realm, so you can see where extinction risk
+                is concentrated and which traits go with it.
+            </p>
+        </header>
+
+        <main id="visualization-2" aria-live="polite"></main>
+
+    </div>
+
+</body>
+</html>
